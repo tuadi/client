@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Feb 13, 2019 at 01:32 PM
--- Server version: 5.6.33
--- PHP Version: 7.0.12
+-- Host: 127.0.0.1
+-- Generation Time: Jan 01, 2021 at 06:30 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `phpmvc`
+-- Database: `nilaimahasiswa`
 --
 
 -- --------------------------------------------------------
@@ -28,21 +29,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `mahasiswa` (
   `id` int(11) NOT NULL,
-  `nama` varchar(100) NOT NULL,
-  `nrp` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `jurusan` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `nim` char(9) NOT NULL,
+  `nama` varchar(250) NOT NULL,
+  `email` varchar(250) DEFAULT NULL,
+  `jurusan` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `mahasiswa`
 --
 
-INSERT INTO `mahasiswa` (`id`, `nama`, `nrp`, `email`, `jurusan`) VALUES
-(25, 'Doddy Ferdiansyah', '133040123', 'doddy@yahoo.com', 'Teknik Informatika'),
-(30, 'Sandhika Galih', '043040023', 'sandhikagalih@unpas.ac.id', 'Teknik Informatika'),
-(31, 'Nofariza Handayani', '083030030', 'nofa@yahoo.com', 'Teknik Lingkungan'),
-(33, 'Erik Doank', '133040123', 'erik@gmail.com', 'Teknik Mesin');
+INSERT INTO `mahasiswa` (`id`, `nim`, `nama`, `email`, `jurusan`) VALUES
+(1, '1718062', 'kipli', 'kipli', 'teknik mesin'),
+(39, '1718068', 'putu adi sudarmawan', 'putddaaan99@gmail.com', 'teknik informatika');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +61,9 @@ ALTER TABLE `mahasiswa`
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
